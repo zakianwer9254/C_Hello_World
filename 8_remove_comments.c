@@ -6,9 +6,9 @@ int main(){
 	int c;
 	while((c=getchar())!=EOF){
 		if(c=='"'){
-			putchar(c);
+			printf("%c",c);
 			while((c=getchar())!='"')
-				putchar(c);
+				printf("%c",c);
 		}
 		else if(c=='/'){
 			if((c=getchar())=='/'){
@@ -19,7 +19,7 @@ int main(){
 			}
 		}
 		else
-			putchar(c);
+			printf("%c",c);
 	}
 
 }
