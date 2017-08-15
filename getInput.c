@@ -7,6 +7,10 @@
 int buffer=0;
 
 int main(){
+
+	int x=5;
+	char y='a';
+	printf("%d %d\n",x,y);
 	char *s=(char*)malloc(sizeof(char));
 	int ans;
 	while((ans=get(s))!=EOF){
@@ -22,22 +26,20 @@ int main(){
 			break;
 		}
 	}
-
-
 }
 
 int get(char *s){
 	int i=0,c;
-	int size=1,flag=0;
+	int size=1;
 	while((s[0]=c=getch())==' ' || c==' ' || c=='\t');
 	s = (char *)realloc(s,++size*sizeof(char));
 	s[1]='\0';
 	if(!isdigit(c))
 		return c;
 	if(isdigit(c)){
-		s = realloc(s,++size*sizeof(char));
+		s = (char *)realloc(s,++size*sizeof(char));
 		while(isdigit(s[++i]=c=getch()))
-			s = realloc(s,++size*sizeof(char));
+			s = (char *)realloc(s,++size*sizeof(char));
 		
 	}
 	s[i]='\0';
